@@ -1,0 +1,279 @@
+[
+  {
+    "chapter": "01 · Entiende el consumo",
+    "title": "Inteligencia con control",
+    "kind": "flow",
+    "labels": [
+      "Diagnosticar",
+      "Elegir",
+      "Ejecutar",
+      "Verificar"
+    ],
+    "takeaway": "El objetivo es gastar mejor, manteniendo la calidad.",
+    "speech": "Abres una conversación, pides una tarea aparentemente simple y notas que el límite cayó más de lo que esperabas. Antes de culpar al modelo, necesitamos entender el trabajo que ocurrió detrás de esa respuesta. En esta lección, vamos a transformar el tema de los tokens en decisiones prácticas. Aprenderás a observar el consumo, organizar el contexto, elegir el esfuerzo de razonamiento y dividir tareas cuando tenga sentido. También analizaremos algunas recomendaciones populares que parecen universales, pero dependen del producto y de la configuración. Al final, tendrás prompts listos, una calculadora y una habilidad para aplicar el método. La propuesta no es prometer uso ilimitado. Es conseguir buenos resultados con menos desperdicio y con evidencia de lo que realmente funcionó."
+  },
+  {
+    "chapter": "01 · Entiende el consumo",
+    "title": "Tres cuentas diferentes",
+    "kind": "compare",
+    "labels": [
+      "ChatGPT\nLímites del plan",
+      "Codex\nUso y créditos",
+      "API\nTokens y tarifas"
+    ],
+    "takeaway": "No transfieras automáticamente precios de la API a la suscripción.",
+    "speech": "Primero, separa tres entornos. En ChatGPT, utilizas los recursos y límites de tu plan. En Codex, el consumo también depende del trabajo del agente, de las herramientas y de las condiciones de la cuenta. En la API, las aplicaciones envían solicitudes que se cobran según las tarifas aplicables. La misma palabra, consumo, puede representar cosas diferentes en estos entornos. Por eso, un ejemplo en dólares en la API no demuestra cuánto de tu suscripción se gastará. La fecha de la consulta también importa: los modelos, precios y reglas cambian. En esta lección, los números de precio se identificarán como ejemplos de la API, y los indicadores de suscripción se tratarán por separado. Esta distinción evita comenzar a ahorrar usando una cuenta que no representa tu caso."
+  },
+  {
+    "chapter": "02 · Qué entra en la solicitud",
+    "title": "La respuesta es solo una parte",
+    "kind": "stack",
+    "labels": [
+      "Instrucciones y herramientas",
+      "Historial relevante",
+      "Tu solicitud actual",
+      "Respuesta y razonamiento"
+    ],
+    "takeaway": "Los tokens son unidades de procesamiento; no siempre equivalen a palabras.",
+    "speech": "Los tokens son unidades en las que el contenido se divide para el procesamiento. Una palabra puede ocupar más de un token, y el código, imágenes y otros formatos tienen reglas propias. El texto que escribes es solo parte de la entrada. Instrucciones, fragmentos de conversación y resultados de herramientas también pueden formar parte de ella. En la salida, además del texto visible, los modelos de razonamiento pueden consumir tokens de procesamiento que no aparecen como una explicación completa en la pantalla. Piensa en un taller: ves la pieza entregada, pero hubo preparación, consulta y trabajo para producirla. Así, una respuesta corta no garantiza una tarea barata. Necesitamos observar la entrada, la salida y las operaciones que fueron necesarias."
+  },
+  {
+    "chapter": "02 · Qué entra en la solicitud",
+    "title": "Historial: el efecto acumulado",
+    "kind": "bars",
+    "labels": [
+      "1ª ronda · 2 mil",
+      "2ª ronda · 4 mil",
+      "3ª ronda · 6 mil"
+    ],
+    "values": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "takeaway": "Ejemplo didáctico sin caché: 12 mil tokens procesados en tres rondas.",
+    "speech": "Visualicemos una conversación simplificada. En la primera ronda entran dos mil tokens. En la segunda, el material acumulado lleva la entrada a cuatro mil. En la tercera, llega a seis mil. Sumando esas entradas, son doce mil tokens procesados a lo largo de las tres solicitudes, aunque la última tenga seis mil. Este es un ejemplo didáctico, no una medición de tu cuenta. Las aplicaciones pueden seleccionar, resumir o compactar el historial, y la caché puede cambiar el costo. Por lo tanto, la frase 'todo se vuelve a enviar al precio completo' es demasiado fuerte. La conclusión práctica sigue siendo útil: conversaciones que acumulan temas, archivos y salidas innecesarias pueden aumentar el trabajo de las próximas rondas. Mantener contexto relevante ayuda tanto a la claridad como al control."
+  },
+  {
+    "chapter": "03 · Caché y continuidad",
+    "title": "Reutilizar puede costar menos",
+    "kind": "compare",
+    "labels": [
+      "Entrada nueva\nProcesamiento nuevo",
+      "Prefijo reutilizado\nPosible descuento",
+      "Respuesta nueva\nCobro de salida"
+    ],
+    "takeaway": "La caché reaprovecha procesamiento; no hace toda la conversación gratuita.",
+    "speech": "La caché es el reaprovechamiento del procesamiento de una parte compatible de la entrada. Imagina que necesitas consultar repetidamente el mismo manual. Si el sistema puede reutilizar una parte ya procesada, esa parte puede tener una tarifa menor. En la API, la documentación distingue entrada común, entrada en caché y, en algunos modelos, escritura de caché. La existencia de una conversación larga no garantiza un acierto de caché, porque la compatibilidad del prefijo y otras condiciones importan. Tampoco significa que la respuesta nueva será gratis. En la práctica, mantén instrucciones estables cuando sean útiles, evita reorganizaciones innecesarias y consulta los campos de uso disponibles. No intentes deducir el ahorro solo por el tamaño que aparece en la ventana."
+  },
+  {
+    "chapter": "03 · Caché y continuidad",
+    "title": "Cambiar de modelo: haz la cuenta",
+    "kind": "flow",
+    "labels": [
+      "Costo del cambio",
+      "Trabajo restante",
+      "Calidad exigida",
+      "Decisión"
+    ],
+    "takeaway": "Un cambio puede compensar; perder caché no prueba un perjuicio total.",
+    "speech": "Cambiar el modelo durante una tarea puede alterar la reutilización del contexto. Cambiar configuraciones también requiere atención, pero eso no permite afirmar que cualquier cambio será la decisión más costosa. Imagina que aún faltan cien operaciones simples. Incluso con un costo inicial de cambio, un modelo adecuado y más económico puede compensar en las operaciones siguientes. En otro caso, cambiar cerca del final quizá añada trabajo sin beneficio. La documentación de Astra también describe mecanismos específicos para actualizar el esfuerzo preservando el prefijo en solicitudes compatibles de la API. La aplicación que usas puede no exponer este mecanismo. La regla práctica es planificar la división temprano, considerar lo que aún falta y comparar el costo total para llegar al resultado correcto."
+  },
+  {
+    "chapter": "04 · Diagnóstico real",
+    "title": "Comienza con las evidencias",
+    "kind": "terminal",
+    "labels": [
+      "/status",
+      "Indicadores de la interfaz",
+      "Uso devuelto por la API"
+    ],
+    "takeaway": "Sin acceso al indicador, el asistente debe decir: no disponible.",
+    "speech": "Antes de cambiar configuraciones, haz un diagnóstico. En Codex, consulta el estado y los indicadores disponibles en tu versión. En la API, examina los datos de uso devueltos y el panel correspondiente. En ChatGPT, consulta los límites que la interfaz realmente muestra. Preguntar al asistente cuánto se ha gastado no concede acceso automático a la facturación de la cuenta. Debe distinguir lo que pudo observar de lo que no está disponible. Nuestro primer prompt hace exactamente eso: pide evidencias, identifica el entorno y evita inventar porcentajes o horarios de renovación. Registra una pequeña referencia inicial, como la tarea realizada, el modelo elegido, el esfuerzo y el uso observado. Después tendrás una base honesta para comparar un cambio."
+  },
+  {
+    "chapter": "04 · Diagnóstico real",
+    "title": "Busca el mayor desperdicio",
+    "kind": "flow",
+    "labels": [
+      "¿Contexto repetido?",
+      "¿Salida excesiva?",
+      "¿Retrabajo?",
+      "¿Esfuerzo innecesario?"
+    ],
+    "takeaway": "Cambia una variable a la vez y compara tareas equivalentes.",
+    "speech": "No todos los usuarios tienen el mismo problema. Para una persona, el mayor costo es cargar archivos enormes. Para otra, es pedir explicaciones largas en todas las etapas. Una tercera repite la tarea porque el objetivo estaba mal definido. Por eso, elige la mayor fuente de desperdicio antes de instalar herramientas. Toma dos tareas similares, mantén los criterios de calidad y cambia una variable a la vez. Por ejemplo, limita la salida del terminal preservando errores y ejecuta nuevamente una tarea equivalente. Compara consumo, tiempo y resultado. Si el consumo disminuye, pero la solución pierde información esencial, el cambio necesita ajuste. Ahorrar es reducir el costo por resultado aprobado, y no solo producir un número menor de tokens."
+  },
+  {
+    "chapter": "05 · Esfuerzo y velocidad",
+    "title": "El esfuerzo debe servir a la tarea",
+    "kind": "steps",
+    "labels": [
+      "Simple → esfuerzo menor",
+      "Intermedia → medio",
+      "Difícil → aumentar si es necesario"
+    ],
+    "takeaway": "Usa dificultad, ambigüedad y verificación para decidir.",
+    "speech": "El esfuerzo de razonamiento controla cuánto procesamiento dedica el modelo al problema dentro de las opciones disponibles. Más esfuerzo puede ayudar en tareas difíciles, pero no garantiza una respuesta mejor en toda situación. Para un trabajo intermedio, comenzar en medio es una hipótesis práctica que puedes probar. Para una extracción simple, quizá sea suficiente un modelo más económico con esfuerzo bajo. Para una investigación compleja, puede valer la pena comenzar por encima de eso. Define primero lo que hace que la respuesta sea aceptable. Luego aumenta el esfuerzo cuando haya una falla concreta que justifique el costo. En esta lección, no vamos a presentar valores de benchmarks como si fueran tu factura. Una prueba pública compara un conjunto específico de tareas; tu trabajo puede tener otra distribución de dificultad."
+  },
+  {
+    "chapter": "05 · Esfuerzo y velocidad",
+    "title": "La rapidez también tiene precio",
+    "kind": "compare",
+    "labels": [
+      "Estándar\\nReferencia de costo",
+      "Rápido\\nPrioriza velocidad",
+      "Urgencia\\n¿Justifica lo extra?"
+    ],
+    "takeaway": "Revisa el multiplicador de tu producto y de tu cuenta.",
+    "speech": "La velocidad y el esfuerzo son elecciones diferentes. El modo rápido busca reducir la espera; el esfuerzo orienta el procesamiento del problema. Es posible pagar más por la velocidad sin estar pidiendo un razonamiento más profundo. La transcripción original habla de duplicar el precio, pero eso no debe repetirse como regla para todos los entornos. En la documentación consultada, hay condiciones específicas por producto, y la tabla de créditos presenta un multiplicador propio para Astra. Antes de activar el modo rápido, revisa la tarifa aplicable y evalúa la urgencia. Una respuesta durante una reunión puede justificar el adicional. Un análisis que pueda terminar unos minutos después quizá no lo necesite. La decisión depende del valor del tiempo en ese trabajo."
+  },
+  {
+    "chapter": "06 · División del trabajo",
+    "title": "Delegue una tarea definida",
+    "kind": "flow",
+    "labels": [
+      "Organizar material",
+      "Ejecutar parte simple",
+      "Resolver ambigüedad",
+      "Revisar resultado"
+    ],
+    "takeaway": "Cada agente necesita entrada, salida y criterio de éxito.",
+    "speech": "Una estrategia útil es reservar modelos más capaces para las decisiones que realmente requieren esa capacidad. Imagina la producción de un informe. Una etapa organiza archivos y extrae campos. Otra verifica inconsistencias. Una tercera resuelve las cuestiones ambiguas y redacta la conclusión. Estas etapas pueden usar recursos diferentes cuando la herramienta lo permita. Pero delegar no significa abrir varios agentes sin necesidad. Cada agente puede cargar contexto, consumir tokens y producir trabajo de integración. Escribe una tarea delimitada: qué archivos leer, qué entregar y cómo comprobar el resultado. Sólo haz la división si hay un beneficio probable. Una tarea pequeña puede ser más barata y más rápida con un solo agente que recibe una instrucción clara."
+  },
+  {
+    "chapter": "06 · División del trabajo",
+    "title": "Ejemplo: revisar un informe",
+    "kind": "compare",
+    "labels": [
+      "Extracción\nTabla + referencias",
+      "Revisión\nErrores y lagunas",
+      "Decisión\nConclusión verificada"
+    ],
+    "takeaway": "El modelo más caro no necesita releer todo en todas las etapas.",
+    "speech": "Apliquemos la idea. Tienes un informe de ventas con tres tablas y quieres encontrar divergencias. La etapa de extracción recibe solo las tablas necesarias y devuelve números con el origen de cada uno. La revisión verifica sumas y marca los casos que no cuadran. El modelo más capaz recibe las divergencias, las evidencias y la pregunta de negocio. No necesita recibir páginas irrelevantes para decidir. Si la conclusión depende de algo que se omitió, debe buscar esa información. El kit incluye un modelo de instrucción para este paso. La skill no finge que cambió el modelo ni promete enrutamiento invisible: usa la capacidad real del entorno y respeta tu autorización para delegar."
+  },
+  {
+    "chapter": "07 · Herramientas y salidas",
+    "title": "Menos ruido, misma evidencia",
+    "kind": "compare",
+    "labels": [
+      "Salida bruta\nMiles de líneas",
+      "Resumen útil\nErrores + recuentos",
+      "Archivo completo\nDisponible para consulta"
+    ],
+    "takeaway": "Filtra lo que entra en el contexto, sin ocultar fallas.",
+    "speech": "Las herramientas pueden añadir instrucciones y resultados a la conversación. La cantidad que se carga depende de la integración; algunas herramientas se descubren solo cuando son necesarias. Por eso, no es correcto decir que todo plugin siempre inyecta su manual completo en cada mensaje. Aun así, vale la pena mantener las integraciones pertinentes al trabajo. Otro objetivo claro son las salidas enormes de comandos. En lugar de colocar miles de líneas en el chat, conserva el registro completo en un archivo y trae un resumen con errores, recuentos y fragmentos importantes. En búsquedas de código, restringe directorios y tipos de archivo. El ahorro no puede ocultar una falla de compilación o una advertencia relevante. El resumen debe mantener la evidencia necesaria para la siguiente decisión."
+  },
+  {
+    "chapter": "07 · Herramientas y salidas",
+    "title": "RTK y Headroom: medir antes",
+    "kind": "steps",
+    "labels": [
+      "Verificar compatibilidad",
+      "Probar en una tarea",
+      "Comparar salida y uso"
+    ],
+    "takeaway": "Los porcentajes anunciados no son garantía para tu proyecto.",
+    "speech": "El video de referencia menciona RTK y Headroom como recursos para reducir salidas o contexto. Aquí aparecen como opciones a evaluar, y no como requisito para ahorrar. Antes de instalar cualquiera, revisa la documentación del proyecto, la integración con tu versión y lo que exactamente será filtrado. Haz una prueba pequeña que incluya un comando con éxito y otro con error. Confirma que el agente sigue percibiendo el error y que el informe de ahorro mide lo que afirma medir. Reducir caracteres de una lista no equivale automáticamente a reducir la factura en la misma proporción. Nuestro kit funciona sin esas herramientas: comienza con alcance de búsqueda, límite de salida y preservación del registro completo."
+  },
+  {
+    "chapter": "08 · Sesiones y compresión",
+    "title": "Nuevo asunto, contexto propio",
+    "kind": "flow",
+    "labels": [
+      "Concluir etapa",
+      "Guardar decisiones",
+      "Pasar referencias",
+      "Abrir nueva conversación"
+    ],
+    "takeaway": "Lleva un resumen útil; no copies todo el historial.",
+    "speech": "Cuando una tarea termina y comienza un asunto independiente, una nueva conversación puede evitar cargar material innecesario. Pero no deseches las decisiones de las que depende el próximo trabajo. Prepara un pasaje corto con objetivo, estado actual, archivos relevantes, verificaciones realizadas y próximo paso. Imagina que terminaste el guion de un video y vas a iniciar la publicación. El próximo agente necesita el archivo aprobado y las instrucciones de publicación, no todas las tentativas de redacción. Para tareas que aún dependen del mismo contexto, permanecer en la conversación puede ser adecuado. La elección no debe ser automática. Nuestro tercer prompt crea un pasaje que puedes leer y corregir antes de iniciar la nueva sesión."
+  },
+  {
+    "chapter": "08 · Sesiones y compactación",
+    "title": "Compactar tiene costo y beneficio",
+    "kind": "compare",
+    "labels": [
+      "Ahora\nProcesar la compactación",
+      "Después\nMenos contexto",
+      "Calidad\nPreservar decisiones"
+    ],
+    "takeaway": "Evalúe la continuidad y cuántas rondas faltan.",
+    "speech": "Compactar significa reducir el contexto manteniendo la información necesaria para continuar. Puede haber un costo en el momento de esta operación, pero también puede disminuir el contexto de las rondas siguientes. Por lo tanto, decir que la compactación nunca ahorra es una conclusión incorrecta. Piensa en organizar una mesa llena de documentos: la organización da trabajo, pero puede facilitar muchas consultas futuras. El beneficio depende de cuánto trabajo queda, del tamaño reducido, del caché y de la calidad del estado preservado. Después de compactar, verifique que los objetivos, restricciones y decisiones importantes sigan presentes. Cuando el tema ya ha terminado, un paso a otra conversación puede ser más adecuado. Cuando necesita continuar una investigación larga, la compactación puede ser parte normal de una estrategia de continuidad."
+  },
+  {
+    "chapter": "09 · Contexto largo en la API",
+    "title": "Capacidad no es rango de precio",
+    "kind": "threshold",
+    "labels": [
+      "Hasta 272 mil tokens",
+      "Más de 272 mil",
+      "Entrada ×2 · salida ×1,5"
+    ],
+    "takeaway": "Regla consultada para GPT-6 Astra en la API, el 20/09/2026.",
+    "speech": "Una ventana grande de contexto indica cuánto cabe, pero no garantiza que toda la capacidad tenga el mismo precio. En la documentación consultada para el Astra en la API, las solicitudes con más de doscientos setenta y dos mil tokens de entrada pasan a un rango mayor. Las tarifas de entrada y caché se multiplican por dos, y la de salida por uno y medio, para la solicitud completa. Es por encima del límite, y no a partir de cualquier valor cercano a él. Esta regla no debe usarse como cálculo automático de su suscripción. Antes de enviar material grande por la API, estime la entrada y vea si todo es necesario. Use la calculadora del kit para simular el rango con las tarifas registradas y actualice esas tarifas cuando la documentación cambie."
+  },
+  {
+    "chapter": "09 · Contexto largo en la API",
+    "title": "Una cuenta que puedes comprobar",
+    "kind": "cost",
+    "labels": [
+      "10 mil nuevos → US$ 0,10",
+      "90 mil en caché → US$ 0,09",
+      "2 mil de salida → US$ 0,10"
+    ],
+    "takeaway": "Total ilustrativo: US$ 0,29. Sin herramientas ni escritura de caché.",
+    "speech": "Aquí hay un ejemplo verificable, usando las tarifas estándar consultadas. Suponga una entrada total de cien mil tokens, de los cuales noventa mil fueron leídos efectivamente del caché. Quedan diez mil tokens de entrada común. A diez dólares por millón, esa parte cuesta diez centavos. Los noventa mil en caché, a un dólar por millón, cuestan nueve centavos. Con dos mil tokens de salida, a cincuenta dólares por millón, tenemos diez centavos más. El total es veintinueve centavos de dólar. Es una simulación con caché confirmado, sin escritura de caché, herramientas u otros adicionales. No es una previsión de su cuenta. La calculadora deja cada partida visible para que usted la compruebe y compare escenarios."
+  },
+  {
+    "chapter": "10 · Formato de los archivos",
+    "title": "Texto cuando el texto basta",
+    "kind": "compare",
+    "labels": [
+      "Texto\nContenido textual",
+      "Imagen\nApariencia y posición",
+      "PDF\nTexto + contenido visual"
+    ],
+    "takeaway": "Elija el formato según la información necesaria para la tarea.",
+    "speech": "Si la tarea es revisar un párrafo, normalmente tiene sentido enviar el texto. Si es evaluar la apariencia de una pantalla, la imagen lleva información que el texto no preserva. En PDFs enviados a modelos con visión por determinados caminos de la API, el procesamiento puede incluir texto extraído e imágenes de las páginas. Esto ayuda a interpretar diagramas, pero también influye en el consumo. Convertir todo a texto puede eliminar tablas, fórmulas y relaciones visuales importantes. Por eso, no prometemos un ahorro fijo del setenta y cinco por ciento. Extraiga texto cuando sea suficiente, seleccione las páginas necesarias y preserve las imágenes que sean esenciales. Después verifique la extracción: una columna cambiada o un número perdido puede costar más retrabajo que el ahorro inicial."
+  },
+  {
+    "chapter": "11 · Kit de uso práctico",
+    "title": "Claridad evita retrabajo",
+    "kind": "terminal",
+    "labels": [
+      "Objetivo + alcance",
+      "Evidencia + criterio",
+      "Respuesta del tamaño necesario"
+    ],
+    "takeaway": "Un buen prompt es suficiente y preciso; no solo corto.",
+    "speech": "Escribir menos palabras no siempre es el mejor camino. Un pedido demasiado corto puede omitir el objetivo y generar varios intentos. Por otro lado, instrucciones repetidas y ejemplos irrelevantes también ocupan contexto. Busque la instrucción más corta que mantenga objetivo, alcance, restricciones y criterios de conclusión claros. Por ejemplo: revise estas dos funciones, corrija el error demostrado por esta prueba y presente el resultado de la verificación. Esto suele orientar mejor que simplemente decir mejore todo. El kit trae tres prompts autorales: diagnóstico, ejecución con contexto controlado y paso de sesión. Son recursos nuevos preparados para esta clase; no estamos atribuyendo a ellos la autoría de los prompts que el video original menciona sin mostrar en la transcripción."
+  },
+  {
+    "chapter": "11 · Kit de uso práctico",
+    "title": "La skill ayuda a aplicar el método",
+    "kind": "flow",
+    "labels": [
+      "Leer el alcance",
+      "Usar datos observables",
+      "Contener salidas",
+      "Verificar entrega"
+    ],
+    "takeaway": "Skill es una orientación reutilizable; no desbloquea tokens ni altera la facturación.",
+    "speech": "Una skill de ahorro de tokens reúne las decisiones prácticas para que no tengas que repetir todas las instrucciones. Al activarla, el agente identifica el entorno, trabaja con datos observables y busca reducir el contexto irrelevante. Recomienda una división proporcional a la tarea, preserva los errores importantes y verifica el resultado. No aumenta la franquicia, no inventa un presupuesto disponible y no altera silenciosamente el modelo de la sesión. Si la plataforma no permite determinada configuración, la orientación informa esa limitación. Junto a ella, recibes la calculadora de costo de la API, que se ejecuta localmente y no envía tus textos a otro servicio. Los valores son estimaciones parametrizadas, y la fecha y el origen de las tarifas quedan registrados para su actualización."
+  },
+  {
+    "chapter": "12 · Tu próximo trabajo",
+    "title": "Prueba, compara, mantén lo que funciona",
+    "kind": "steps",
+    "labels": [
+      "1. Define el resultado",
+      "2. Registra el punto de partida",
+      "3. Cambia una variable",
+      "4. Verifica costo y calidad"
+    ],
+    "takeaway": "Ahorro útil = menos desperdicio por resultado aprobado.",
+    "speech": "Ahora aplica el método a una tarea real y pequeña. Define el resultado esperado y los archivos necesarios. Observa el modelo, el esfuerzo y el modo de velocidad disponibles. Registra los indicadores que puedes observar. Ejecuta con salidas proporcionales y verifica la entrega. En la siguiente tarea equivalente, prueba un cambio y compáralo. Si la división entre modelos tiene sentido, usa instrucciones delimitadas y preserva las evidencias en la pasada. Si el contexto es grande, decide entre continuidad, compactación y una nueva sesión. Lo importante es mantener un proceso que puedas explicar y repetir. No necesitas memorizar todas las tarifas: necesitas saber dónde verificarlas y cómo medirlas. Usa el kit, ajústalo a tu entorno y evalúa siempre el resultado completo."
+  }
+]

@@ -1,0 +1,87 @@
+## 1. Intelligence with control
+
+You start a conversation, request an apparently simple task, and notice that the limit dropped more than you expected. Before blaming the model, we need to understand the work that happened behind that response. In this lesson, we’ll turn the topic of tokens into practical decisions. You’ll learn to monitor consumption, organize context, choose the amount of reasoning effort, and split tasks when it makes sense. We’ll also examine some popular tips that seem universal but actually depend on the product and configuration. By the end, you’ll have ready-made prompts, a calculator, and a skill to apply the method. The aim isn’t to promise unlimited usage. It’s to achieve good results with less waste and with evidence of what actually worked.
+
+## 2. Three different accounts
+
+First, separate three environments. In ChatGPT, you use the resources and limits of your plan. In Codex, consumption also depends on the agent’s work, the tools, and the account conditions. In the API, applications send requests that are billed according to the applicable rates. The same word, consumption, can represent different things in these environments. Therefore, a dollar example in the API does not prove how much of your subscription will be spent. The query date also matters: models, prices, and rules change. In this lesson, price numbers will be identified as API examples, and subscription indicators will be treated separately. This distinction prevents you from starting to save using an account that doesn’t represent your case.
+
+## 3. The answer is only part of it
+
+Tokens are the units into which content is split for processing. A word can occupy more than one token, and code, images, and other formats have their own rules. The text you type is only part of the input. Instructions, conversation excerpts, and tool results can also be part of it. In the output, beyond the visible text, reasoning models can consume processing tokens that don’t appear as a complete explanation on the screen. Think of a workshop: you see the delivered part, but there was preparation, consultation, and work to produce it. Thus, a short answer does not guarantee a cheap task. We need to look at the input, the output, and the operations that were required.
+
+## 4. History: the cumulative effect
+
+Let’s visualize a simplified conversation. In the first round, two thousand tokens enter. In the second, the accumulated material brings the input to four thousand. In the third, it reaches six thousand. Adding these inputs, twelve thousand tokens are processed over the three requests, even though the last one has six thousand. This is a didactic example, not a measurement of your account. Applications can select, summarize, or compress the history, and caching can change the cost. Therefore, the statement that everything is always resent at full price is too strong. The practical conclusion remains useful: conversations that accumulate topics, files, and unnecessary outputs can increase the work of subsequent rounds. Keeping relevant context helps both clarity and control.
+
+## 5. Reusing can cost less
+
+Cache is the reuse of processing for a compatible part of the input. Imagine you need to consult the same manual repeatedly. If the system can reuse a part that has already been processed, that part may have a lower rate. In the API, the documentation distinguishes regular input, cached input, and, in some models, cache writes. The existence of a long conversation does not guarantee a cache hit, because prefix compatibility and other conditions matter. It also does not mean the new response will be free. In practice, keep instructions stable when they are useful, avoid unnecessary reorganizations, and consult the available usage fields. Do not try to infer savings solely from the size shown in the window.
+
+## 6. Switch Model: Do the Math
+
+Switching the model during a task can change context reuse. Changing settings also requires attention, but that does not allow us to claim that any switch will be the most expensive decision. Imagine that there are still one hundred simple operations left. Even with an initial switching cost, a suitable and more economical model can pay off in the subsequent operations. In another case, switching near the end might add work without benefit. The Astra documentation also describes specific mechanisms to update the effort while preserving the prefix in API‑compatible requests. The application you use may not expose this mechanism. The practical rule is to plan the split early, consider what remains, and compare the total cost to arrive at the correct outcome.
+
+## 7. Start with the Evidence
+
+Before changing settings, perform a diagnosis. In Codex, check the status and the indicators available in your version. In the API, examine the usage data returned and the corresponding dashboard. In ChatGPT, look at the limits that the interface actually shows. Asking the assistant how much has already been spent does not automatically grant access to the account’s billing. It must distinguish what it was able to observe from what is unavailable. Our first prompt does exactly that: it asks for evidence, identifies the environment, and avoids inventing percentages or renewal times. Record a brief initial reference, such as the task performed, the model chosen, the effort, and the observed usage. Then you will have an honest baseline to compare a change.
+
+## 8. Find the Biggest Waste
+
+Not every user has the same problem. For one person, the biggest cost is loading huge files. For another, it is requesting long explanations at every step. A third repeats the task because the goal was poorly defined. Therefore, identify the biggest source of waste before installing tools. Take two similar tasks, keep the quality criteria, and change one variable at a time. For example, limit the terminal output while preserving errors and run an equivalent task again. Compare consumption, time, and result. If consumption drops but the solution loses essential information, the change needs adjustment. Saving is reducing the cost per approved result, not merely producing a smaller token count.
+
+## 9. Effort Should Serve the Task
+
+The reasoning effort controls how much processing the model dedicates to the problem within the available options. More effort can help with difficult tasks, but it does not guarantee a better answer in every situation. For an intermediate job, starting at medium is a practical hypothesis you can test. For a simple extraction, a more economical model with low effort may be sufficient. For a complex investigation, it may be worth starting above that. First define what makes the answer acceptable. Then increase the effort when there is a concrete failure that justifies the cost. In this lesson we will not present benchmark values as if they were your bill. A public test compares a specific set of tasks; your work may have a different difficulty distribution.
+
+## 10. Speed Also Has a Cost
+
+Speed and effort are different choices. Fast mode aims to reduce wait time; effort guides the problem’s processing. It is possible to pay more for speed without requesting deeper reasoning. The original transcript mentions doubling the price, but that should not be repeated as a rule for all environments. In the consulted documentation, there are product‑specific conditions, and the credit table shows its own multiplier for Astra. Before enabling fast mode, check the applicable rate and assess the urgency. An answer needed during a meeting may justify the extra charge. An analysis that can finish a few minutes later may not need it. The decision depends on the value of time for that work.
+
+## 11. Delegate a Defined Task
+
+A useful strategy is to reserve more capable models for decisions that truly require that capability. Imagine producing a report. One step organizes files and extracts fields. Another checks for inconsistencies. A third resolves ambiguous issues and drafts the conclusion. These steps can use different resources when the tool allows it. But delegating does not mean launching multiple agents unnecessarily. Each agent can carry context, consume tokens, and produce integration work. Write a bounded task: which files to read, what to deliver, and how to verify the result. Only split the work if there is a likely benefit. A small task can be cheaper and faster with a single agent that receives a clear instruction.
+
+## 12. Example: Review a Report
+
+Let's apply the idea. You have a sales report with three tables and want to find discrepancies. The extraction step receives only the necessary tables and returns numbers with their source. The review checks sums and flags cases that don't add up. The most capable model receives the discrepancies, the evidence, and the business question. It does not need to receive irrelevant pages to decide. If the conclusion depends on something that was omitted, it should retrieve that information. The kit includes an instruction template for this handoff. The skill does not pretend the model changed nor promises invisible routing: it uses the environment's actual capability and respects your permission to delegate.
+
+## 13. Less Noise, Same Evidence
+
+Tools can add instructions and results to the conversation. How much of that is loaded depends on the integration; some tools are discovered only when needed. Therefore, it is not correct to say that every plugin always injects its entire manual into each message. Still, it is worthwhile to keep integrations relevant to the work. Another clear target is the massive command outputs. Instead of dumping thousands of lines into the chat, preserve the full log in a file and provide a summary with errors, counts, and important excerpts. In code searches, restrict directories and file types. Savings must not hide a build failure or a relevant warning. The summary must retain the evidence needed for the next decision.
+
+## 14. RTK and Headroom: Measure First
+
+The reference video mentions RTK and Headroom as resources to reduce output or context. They appear here as options to evaluate, not as a requirement to save. Before installing either, check the project's documentation, its integration with your version, and exactly what will be filtered. Run a small test that includes a command that succeeds and another that fails. Verify that the agent still perceives the error and that the savings report measures what it claims to measure. Reducing characters in a listing does not automatically equate to reducing the bill proportionally. Our kit works without these tools: it starts with search scope, output limit, and full log preservation.
+
+## 15. New Topic, Own Context
+
+When a task ends and an independent topic begins, a new conversation can avoid loading unnecessary material. But don't discard the decisions that the next work depends on. Prepare a short passage with the objective, current state, relevant files, checks performed, and next step. Imagine you finished a video script and are about to start publishing. The next agent needs the approved file and the publishing instructions, not all the drafting attempts. For tasks that still depend on the same context, staying in the conversation may be appropriate. The choice should not be automatic. Our third prompt creates a passage that you can read and edit before starting the new session.
+
+## 16. Compaction has cost and benefit
+
+Compaction means reducing the context while keeping the information needed to continue. There may be a cost at the moment of this operation, but it can also reduce the context of subsequent rounds. Therefore, saying that compaction never saves is an incorrect conclusion. Think of organizing a table full of documents: the organization takes work, but it can facilitate many future queries. The benefit depends on how much work remains, the reduced size, the cache, and the quality of the preserved state. After compacting, check that objectives, constraints, and important decisions are still present. When the topic is already finished, moving to another conversation may be more appropriate. When you need to continue a long investigation, compaction can be a normal part of a continuity strategy.
+
+## 17. Capacity is not a price tier
+
+A large context window tells how much fits, but it does not guarantee that the entire capacity has the same price. In the documentation consulted for Astra in the API, requests with more than two hundred seventy‑two thousand input tokens move to a higher tier. Input and cache rates are multiplied by two, and output by one and a half, for the entire request. It is above the limit, not from any value near it. This rule should not be used as an automatic calculation for your subscription. Before sending large material through the API, estimate the input and see if everything is necessary. Use the kit’s calculator to simulate the tier with the recorded rates and update those rates when the documentation changes.
+
+## 18. An account you can verify
+
+Here is a verifiable example, using the standard rates consulted. Suppose a total input of one hundred thousand tokens, of which ninety thousand were actually read from the cache. Ten thousand regular input tokens remain. At ten dollars per million, that part costs ten cents. The ninety thousand cached, at one dollar per million, cost nine cents. With two thousand output tokens, at fifty dollars per million, we have another ten cents. The total is twenty‑nine cents. This is a simulation with confirmed cache, without cache writes, tools, or other add‑ons. It is not a forecast of your bill. The calculator makes each line item visible for you to verify and compare scenarios.
+
+## 19. Text when text suffices
+
+If the task is to review a paragraph, it usually makes sense to send the text. If the task is to evaluate the appearance of a screen, the image carries information that the text does not preserve. In PDFs sent to models with vision via certain API paths, processing can include extracted text and page images. This helps interpret diagrams, but also affects consumption. Converting everything to text can eliminate tables, formulas, and visually important relationships. Therefore, we do not promise a fixed seventy‑five percent saving. Extract text when it is sufficient, select the necessary pages, and preserve images that are essential. Then verify the extraction: a swapped column or a missing number can cost more rework than the initial saving.
+
+## 20. Clarity avoids rework
+
+Writing fewer words is not always the best path. A request that is too short can omit the goal and generate multiple attempts. On the other hand, repeated instructions and irrelevant examples also consume context. Aim for the smallest instruction that keeps the goal, scope, constraints, and completion criteria clear. For example: review these two functions, fix the error demonstrated by this test, and present the verification result. This usually guides better than simply saying improve everything. The kit provides three authorial prompts: diagnosis, execution with controlled context, and session handoff. These are new resources prepared for this lesson; we are not attributing to them the authorship of the prompts that the original video mentions without showing in the transcript.
+
+## 21. A skill helps apply the method
+
+A token-saving skill gathers the practical decisions so you don't have to repeat all the instructions. When triggered, the agent identifies the environment, works with observable data, and seeks to reduce irrelevant context. It recommends a division proportional to the task, preserves important errors, and verifies the result. It does not increase the quota, does not fabricate an available budget, and does not silently change the session model. If the platform does not allow a certain configuration, the guidance reports this limitation. Along with it, you receive the API cost calculator, which runs locally and does not send your texts to another service. The values are parametrized estimates, and the date and source of the rates are recorded for updates.
+
+## 22. Test, compare, keep what works
+
+Now apply the method to a real, small task. Define the expected outcome and the required files. Look at the model, the effort, and the available speed mode. Record the indicators you can observe. Run with proportional outputs and verify the delivery. In the next equivalent task, test a change and compare. If the division between models makes sense, use delimited instructions and preserve the evidence in the passage. If the context is large, decide between continuity, compression, and a new session. The important thing is to maintain a process you can explain and repeat. You don't need to memorize all the rates: you need to know where to check them and how to measure. Use the kit, adapt it to your environment, and always evaluate the complete result.

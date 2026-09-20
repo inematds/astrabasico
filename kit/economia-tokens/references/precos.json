@@ -1,0 +1,10 @@
+{
+  "model": "gpt-6-astra",
+  "product": "API Standard",
+  "checked_at": "2026-09-20",
+  "currency": "USD",
+  "per_million": {"input": 10, "cached": 1, "cache_write": 12.5, "output": 50},
+  "long_context": {"above_input_tokens": 272000, "input_multiplier": 2, "output_multiplier": 1.5},
+  "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "notes": "Estimativa de uma solicitação. Entrada total inclui cache lido e escrito. Saída deve incluir todos os tokens faturáveis. Não inclui ferramentas, impostos, tarifas regionais, Fast ou assinatura."
+}

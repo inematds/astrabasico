@@ -1,0 +1,8 @@
+context/
+tasks/
+FALHAS.md
+scripts/heygen_read.py
+__pycache__/
+.env*
+node_modules/
+verification/

@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-20T15:49:13.615891+00:00",
+  "title": "Design System: Astra Básico",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "hero-image",
+        "value": "0 30px 80px -30px #000",
+        "purpose": "Imagem do hero."
+      }
+    ],
+    "motion": [
+      {
+        "name": "anchor-scroll",
+        "value": "smooth",
+        "purpose": "Rolagem das âncoras; auto quando prefers-reduced-motion:reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "grid-two",
+        "value": "820px"
+      },
+      {
+        "name": "hero-stack",
+        "value": "780px"
+      },
+      {
+        "name": "nav-links-hide",
+        "value": "760px"
+      },
+      {
+        "name": "nav-wrap",
+        "value": "620px"
+      },
+      {
+        "name": "grid-one",
+        "value": "540px"
+      }
+    ],
+    "colorMeta": {
+      "amb": {
+        "role": "primary",
+        "displayName": "Âmbar INEMA"
+      },
+      "light-amb-text": {
+        "role": "primary",
+        "displayName": "Âmbar de leitura no tema claro"
+      },
+      "sky": {
+        "role": "secondary",
+        "displayName": "Azul INEMA.CLUB e foco"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "description": "Primary action",
+      "html": "<a class=\"ds-btn\" href=\"#aula\">Ler os 22 tópicos</a>",
+      "css": ".ds-btn{display:inline-block;background:var(--amb,#E2A23B);color:#1a1206;font:600 16px Sora,sans-serif;padding:.6em 1.05em;border-radius:10px;text-decoration:none}:focus-visible{outline:3px solid var(--sky,#38bdf8);outline-offset:4px}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Ghost download",
+      "kind": "button",
+      "description": "Ghost download",
+      "html": "<a class=\"ds-ghost\" href=\"#kit\">Baixar kit</a>",
+      "css": ".ds-ghost{display:inline-block;background:transparent;color:var(--txt,#e9e9ee);border:1px solid var(--line,#272730);font:600 16px Sora,sans-serif;padding:.6em 1.05em;border-radius:10px;text-decoration:none}:focus-visible{outline:3px solid var(--sky,#38bdf8);outline-offset:4px}",
+      "refersTo": "button-ghost"
+    },
+    {
+      "name": "Calculator field",
+      "kind": "input",
+      "description": "Calculator field",
+      "html": "<label class=\"ds-label\">Entrada total<input class=\"ds-input\" type=\"number\" min=\"0\" step=\"1\" value=\"100000\"></label>",
+      "css": ".ds-label{display:block;color:var(--txt,#e9e9ee);font:16px/1.65 Inter,sans-serif}.ds-input{display:block;width:100%;padding:12px;margin:7px 0 18px;background:var(--bg2,#14141b);color:var(--txt,#e9e9ee);border:1px solid var(--line,#272730);border-radius:8px;font:inherit}:focus-visible{outline:3px solid var(--sky,#38bdf8);outline-offset:4px}",
+      "refersTo": "input"
+    },
+    {
+      "name": "Section label",
+      "kind": "chip",
+      "description": "Section label",
+      "html": "<span class=\"ds-chip\">03 · API STANDARD · USD</span>",
+      "css": ".ds-chip{display:inline-block;font:600 .72rem Sora,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--amb-text,#E2A23B)}:focus-visible{outline:3px solid var(--sky,#38bdf8);outline-offset:4px}"
+    },
+    {
+      "name": "Base stylesheet card",
+      "kind": "card",
+      "description": "Base stylesheet card",
+      "html": "<div class=\"ds-card\"><h3>Material de apoio</h3><p>Texto complementar.</p></div>",
+      "css": ".ds-card{background:var(--card,#16161e);border:1px solid var(--line,#272730);border-radius:14px;padding:20px;color:var(--txt,#e9e9ee)}.ds-card h3{font:700 1.05rem/1.15 Sora,sans-serif;margin:0 0 .4em}.ds-card p{color:var(--mut,#9a9aa6);font:.92rem/1.65 Inter,sans-serif;margin:0}:focus-visible{outline:3px solid var(--sky,#38bdf8);outline-offset:4px}",
+      "refersTo": "card"
+    },
+    {
+      "name": "Lesson disclosure",
+      "kind": "custom",
+      "description": "Lesson disclosure",
+      "html": "<details class=\"ds-topic\"><summary>01 · Controle de tokens</summary><p>Abra cada tópico para ler a explicação completa.</p></details>",
+      "css": ".ds-topic{border-bottom:1px solid var(--line,#272730);padding:22px 0;color:var(--txt,#e9e9ee)}.ds-topic summary{cursor:pointer;font:1.12rem/1.65 Sora,sans-serif}.ds-topic p{max-width:78ch;font:16px/1.65 Inter,sans-serif}:focus-visible{outline:3px solid var(--sky,#38bdf8);outline-offset:4px}"
+    },
+    {
+      "name": "Brand navigation",
+      "kind": "nav",
+      "description": "Brand navigation",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#top\">Astra Básico</a><a class=\"ds-club\" href=\"https://inema.club\">INEMA.CLUB</a><a class=\"ds-pro\" href=\"https://inema.pro\">PRO</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:12px;min-height:60px;background:var(--bg,#0c0c10);border-bottom:1px solid var(--line,#272730);backdrop-filter:blur(12px)}.ds-nav a{text-decoration:none;font-family:Sora,sans-serif}.ds-brand{font-weight:800;color:var(--amb-text,#E2A23B);letter-spacing:-.02em}.ds-club{font-size:.88rem;font-weight:600;color:var(--sky,#38bdf8)}.ds-pro{font-size:.88rem;font-weight:600;color:var(--pro,#cbd5e1)}.ds-club:hover,.ds-pro:hover{filter:brightness(1.15)}:focus-visible{outline:3px solid var(--sky,#38bdf8);outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "INEMA dark âmbar",
+    "overview": "A identidade é a do padrão projetos-landing-guia: INEMA dark âmbar com tema claro opcional, Sora, Inter e JetBrains Mono. O guia privilegia leitura (Read); a calculadora acrescenta uma operação delimitada (Operate). A documentação registra o código existente, sem propor outra identidade.",
+    "keyCharacteristics": [
+      "Âmbar para identidade e ação; azul para INEMA.CLUB e foco.",
+      "Leitura por seções, tópicos expansíveis e código com quebra de linha.",
+      "Tema escuro inicial e claro persistido localmente."
+    ],
+    "rules": [],
+    "dos": [
+      "Do preservar a identidade INEMA e os links INEMA.CLUB e PRO.",
+      "Do distinguir o âmbar de fundo de botão do âmbar de texto no tema claro.",
+      "Do manter rótulos, foco visível, conteúdo completo dos tópicos e erros da calculadora legíveis.",
+      "Do identificar a prévia como silenciosa em PT e os vídeos finais como pendentes."
+    ],
+    "donts": [
+      "Don't prometer economia garantida, franquia ilimitada ou consulta de cobrança real.",
+      "Don't descrever roteiros PT/ES/EN como vídeos finais disponíveis.",
+      "Don't esconder evidências, ressalvas ou a composição do custo simulado."
+    ]
+  }
+}
