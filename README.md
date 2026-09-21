@@ -4,7 +4,7 @@
 
 Roteiro completo em 22 cenas, prompts autorais, skill `economia-tokens` e calculadora local. Baseado no vídeo indicado nas fontes, com correções e exemplos próprios.
 
-**Estado dos vídeos:** prévia visual aprovada, sem narração. Os três avatares narrados (PT/ES/EN) foram enviados ao HeyGen em 21/09/2026 pela rota do estúdio usada no promoavatar3, com Avatar III, voz INEMA TIME e 1080p. As primeiras tentativas falharam pelo limite de 5.000 caracteres por texto de voz. Os roteiros foram divididos sem cortes em blocos de até 4.500 caracteres; o primeiro bloco em português foi reenviado para validação. A geração restante e a montagem final com ilustrações e legendas ainda estão pendentes.
+**Estado dos vídeos:** produção em andamento pela assinatura do HeyGen, com avatar Nei, voz INEMA TIME e Avatar III. Roteiros divididos em 13 blocos de até 4.500 caracteres. O primeiro bloco foi baixado, transcrito e montado com ilustrações e legendas; as seis cenas passaram nas verificações e na revisão visual. Envio dos demais blocos, download, montagem e publicação são acompanhados por processos persistentes. Os vídeos completos serão vinculados ao guia somente depois das verificações finais.
 
 ## Uso
 
