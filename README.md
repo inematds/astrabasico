@@ -4,7 +4,7 @@
 
 Roteiro completo em 22 cenas, prompts autorais, skill `economia-tokens` e calculadora local. Baseado no vídeo indicado nas fontes, com correções e exemplos próprios.
 
-**Estado dos vídeos:** prévia visual aprovada, sem narração. Os vídeos finais com avatar e voz do Nei nos três idiomas estão pendentes de acesso ao HeyGen.
+**Estado dos vídeos:** prévia visual aprovada, sem narração. Os três avatares narrados (PT/ES/EN) foram enviados ao HeyGen em 21/09/2026 pela rota do estúdio usada no promoavatar3, com Avatar III, voz INEMA TIME e 1080p. A geração está em andamento; a montagem final com ilustrações e legendas ainda está pendente.
 
 ## Uso
 
