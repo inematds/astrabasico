@@ -1,6 +1,6 @@
 """Publish all three verified final lessons. Refuses incomplete production."""
 from pathlib import Path
-import json,subprocess,urllib.request
+import json,subprocess,urllib.request,time
 ROOT=Path('/home/nmaldaner/projetos/output/astrabasico');REPO=Path(__file__).resolve().parents[1]
 def run(args,**kw):return subprocess.run(args,cwd=REPO,check=True,**kw)
 def publish():
@@ -31,6 +31,20 @@ def publish():
  if changed:run(['git','commit','-m','feat: publish narrated illustrated lessons in three languages'])
  run(['git','push','origin','main'])
  run(['gh','release','edit',tag,'--repo',repo,'--draft=false'])
+ for lang,item in delivery.items():
+  request=urllib.request.Request(item['url'],method='HEAD')
+  with urllib.request.urlopen(request,timeout=60) as response:assert response.status==200
+ for attempt in range(20):
+  try:
+   valid=True
+   for lang,item in delivery.items():
+    suffix='' if lang=='pt' else lang+'/'
+    with urllib.request.urlopen('https://inematds.github.io/astrabasico/guia/'+suffix,timeout=20) as response:page=response.read().decode()
+    valid=valid and item['url'] in page
+   if valid:break
+  except Exception:pass
+  time.sleep(30)
+ else:raise RuntimeError('Push and release complete; GitHub Pages still needs verification')
  (ROOT/'verification/publication.json').write_text(json.dumps({'release':f'https://github.com/{repo}/releases/tag/{tag}','videos':delivery},indent=2))
  print('Published release and pushed guide',flush=True)
 if __name__=='__main__':publish()
