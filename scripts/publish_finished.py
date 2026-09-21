@@ -11,7 +11,7 @@ def publish():
   assert len(r['chapters'])==22
   assert (ROOT/f'verification/decode-full-{lang}.log').read_text()==''
  tag='v1.1.0';repo='inematds/astrabasico'
- notes=ROOT/'final/RELEASE.md';notes.write_text('Aula completa em português, espanhol e inglês:22tópicos ilustrados, avatar e voz do Nei, legendas SRT e kit prático.\n\n'+ '\n'.join(f"- {lang.upper()}: {int(r['duration']//60)}min{int(r['duration']%60):02d}s" for lang,r in receipts.items())+'\n\nGuia: https://inematds.github.io/astrabasico/guia/\n')
+ notes=ROOT/'final/RELEASE.md';notes.write_text('Aula completa em português, espanhol e inglês: 22 tópicos ilustrados, avatar e voz do Nei, legendas SRT e kit prático.\n\n'+ '\n'.join(f"- {lang.upper()}: {int(r['duration']//60)}min{int(r['duration']%60):02d}s" for lang,r in receipts.items())+'\n\nGuia: https://inematds.github.io/astrabasico/guia/\n')
  existing=subprocess.run(['gh','release','view',tag,'--repo',repo],cwd=REPO,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
  if existing.returncode:run(['gh','release','create',tag,'--repo',repo,'--draft','--title','Astra Básico — aulas completas PT, ES e EN','--notes-file',str(notes)])
  assets=[]
@@ -21,7 +21,7 @@ def publish():
  (REPO/'docs/video-delivery.json').write_text(json.dumps(delivery,ensure_ascii=False,indent=2)+'\n')
  run(['python3','scripts/build_guide.py'])
  readme=REPO/'README.md';text=readme.read_text();begin=text.index('**Estado dos vídeos:**');end=text.index('\n\n',begin)
- text=text[:begin]+'**Estado dos vídeos:** aulas completas em português, espanhol e inglês, com22tópicos ilustrados, avatar e voz do Nei e legendas. Assista no guia ou baixe osMP4 eSRT na [release v1.1.0](https://github.com/inematds/astrabasico/releases/tag/v1.1.0).'+text[end:];text=text.replace('Versão 1.0.0.','Versão 1.1.0.');readme.write_text(text)
+ text=text[:begin]+'**Estado dos vídeos:** aulas completas em português, espanhol e inglês, com 22 tópicos ilustrados, avatar e voz do Nei e legendas. Assista no guia ou baixe os MP4 e SRT na [release v1.1.0](https://github.com/inematds/astrabasico/releases/tag/v1.1.0).'+text[end:];text=text.replace('Versão 1.0.0.','Versão 1.1.0.');readme.write_text(text)
  for lang,item in delivery.items():
   path=REPO/'guia'/('' if lang=='pt' else lang)/'index.html';page=path.read_text()
   assert item['url'] in page and item['srt'] in page and page.count('<details>')==22
