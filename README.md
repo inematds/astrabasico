@@ -4,7 +4,7 @@
 
 Roteiro completo em 22 cenas, prompts autorais, skill `economia-tokens` e calculadora local. Baseado no vídeo indicado nas fontes, com correções e exemplos próprios.
 
-**Estado dos vídeos:** produção em andamento pela assinatura do HeyGen, com avatar Nei, voz INEMA TIME e Avatar III. Roteiros divididos em 13 blocos de até 4.500 caracteres. O primeiro bloco foi baixado, transcrito e montado com ilustrações e legendas; as seis cenas passaram nas verificações e na revisão visual. Envio dos demais blocos, download, montagem e publicação são acompanhados por processos persistentes. Os vídeos completos serão vinculados ao guia somente depois das verificações finais.
+**Estado dos vídeos:** aulas completas em português, espanhol e inglês, com 22 tópicos ilustrados, avatar e voz do Nei e legendas. Assista no guia ou baixe os MP4 e SRT na [release v1.1.0](https://github.com/inematds/astrabasico/releases/tag/v1.1.0).
 
 ## Uso
 
@@ -20,4 +20,4 @@ Leia [o kit](kit/COMO-USAR.md), [as fontes e correções](docs/FONTES-E-CORRECOE
 
 `video/index.html` é a composição HyperFrames com durações provisórias. `video/previa-visual-pt.mp4` apresenta as 22 cenas em 132 segundos, sem áudio. Para regenerar o HTML português: `python3 scripts/build_video.py`. A guia é gerada com `python3 scripts/build_guide.py`.
 
-Versão 1.0.0.
+Versão 1.1.0.
